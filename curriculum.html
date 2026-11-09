@@ -1,0 +1,78 @@
+---
+layout: page
+title: 교육과정과 실습
+slug: curriculum
+permalink: /curriculum/
+description: "한양여대 항공과 교육과정과 실습. 객실승무원, 항공여객운송, 호스피탈리티 세 갈래 수업과 항공캐빈실습실, VR 항공안전, 예약발권(TOPAS, Amadeus) 실습, 연계 자격증을 소개합니다."
+lead: "강의실보다 실습실에 더 오래 있어요. 기내, 공항, 서비스 현장을 그대로 옮겨 와 몸으로 익혀요."
+---
+{% assign info = site.data.info %}
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>2년 성장 지도</h2>
+      <p>과목이 열리는 학기는 해마다 조금씩 바뀌어요. 학기별 배치는 <a href="{{ info.official_roadmap }}" target="_blank" rel="noopener">공식 교육과정 로드맵{% include icon.html name='external' %}</a>에서 확인하세요.</p>
+    </div>
+    <ol class="journey">
+      {% for j in site.data.journey %}
+      <li class="journey-step">
+        <span class="journey-num">{{ j.step }}</span>
+        <h3>{{ j.title }}</h3>
+        <p>{{ j.desc }}</p>
+        <ul class="tags">{% for t in j.tags %}<li>{{ t }}</li>{% endfor %}</ul>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section section-sky">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>세 갈래로 배워요</h2>
+    </div>
+    {% for t in site.data.tracks %}
+    <article class="track-row track-{{ t.id }}">
+      <div class="track-row-head">
+        <span class="track-icon">{% include icon.html name=t.icon %}</span>
+        <div><p class="track-en">{{ t.en }}</p><h3>{{ t.title }}</h3></div>
+      </div>
+      <p>{{ t.desc }}</p>
+      <ul class="tags">{% for c in t.courses %}<li>{{ c }}</li>{% endfor %}</ul>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section" id="facilities">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>이런 곳에서 실습해요</h2>
+    </div>
+    <div class="cards cards-3">
+      {% for f in site.data.facilities %}
+      <article class="card facility">
+        <div class="facility-img">{% if f.photo != "" %}<img src="{{ f.photo | relative_url }}" alt="{{ f.name }}" loading="lazy">{% else %}<span class="facility-ph" aria-hidden="true"></span>{% endif %}</div>
+        <h3>{{ f.name }}</h3>
+        <p>{{ f.desc }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-navy">
+  <div class="wrap">
+    <div class="split">
+      <div class="section-head">
+        <h2>스마트항공 AI융합 과정</h2>
+        <p>공항과 항공 서비스도 AI로 빠르게 바뀌고 있어요. 2026학년도부터 항공과 교육과정에 스마트항공 AI융합 과정이 함께 운영돼요.</p>
+        <p><a class="btn btn-primary" href="{{ info.official_ai_module }}" target="_blank" rel="noopener">AI융합 과정 교육과정 보기{% include icon.html name='external' %}</a></p>
+      </div>
+      <div class="section-head" id="licenses">
+        <h2>자격증도 함께</h2>
+        <ul class="license-cloud">{% for l in site.data.licenses %}<li>{{ l }}</li>{% endfor %}</ul>
+      </div>
+    </div>
+  </div>
+</section>

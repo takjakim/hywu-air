@@ -1,0 +1,84 @@
+---
+layout: page
+title: 학과소개
+slug: about
+permalink: /about/
+description: "한양여자대학교 항공과 학과소개. 1978년 관광과에서 출발해 2016년 독립한 항공과의 교육목표, 연혁, 교수진, 학과사무실 위치와 연락처를 안내합니다."
+lead: "1978년 관광과에서 시작해 2016년 항공과로 독립했어요. 항공 서비스 한 길만 보고 달려온 학과입니다."
+---
+{% assign info = site.data.info %}
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <h2>Be the Best<br>Crew Members</h2>
+        <p>항공산업 실무능력을 갖춘 글로벌 항공 서비스인을 키우고, 지역사회와 국가에 공헌하는 봉사인을 기르는 것이 목표예요. 국가직무능력표준(NCS) 항공객실서비스 기준으로 교육과정을 운영하고, 항공산업 현장에 맞춘 사회맞춤형 교육을 더하고 있어요.</p>
+      </div>
+      <ul class="check-list">
+        <li>항공 객실승무원, 지상직 등 항공 분야 전문인 양성</li>
+        <li>서비스 분야 전문인, 글로벌 인재 양성</li>
+        <li>NCS 기반 교육과정 운영</li>
+        <li>항공산업 분야 사회맞춤 교육과정 운영</li>
+        <li>전공 체험과 현장실습 기회 제공</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>걸어온 길</h2>
+    </div>
+    <ol class="timeline">
+      <li><strong>1978</strong><span>관광과로 출발</span></li>
+      <li><strong>2015</strong><span>항공관광과로 이름 변경 (항공서비스, 호텔 전공)</span></li>
+      <li><strong>2016</strong><span>항공과와 호텔관광과로 분리, 항공과 독립</span></li>
+      <li><strong>2026</strong><span>스마트항공 AI융합 과정 운영</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>함께하는 교수진</h2>
+      <p>항공사 객실훈련과 서비스 현장을 경험한 교수님들이 가르쳐요.</p>
+    </div>
+    <div class="cards cards-4">
+      {% for f in site.data.faculty.full_time %}
+      <article class="card prof">
+        <div class="prof-photo">{% if f.photo != "" %}<img src="{{ f.photo | prepend: '/assets/img/faculty/' | relative_url }}" alt="{{ f.name }} 교수">{% else %}<span>{{ f.name | slice: 0 }}</span>{% endif %}</div>
+        <h3>{{ f.name }} 교수</h3>
+        {% if f.role != "" %}<p class="prof-role">{{ f.role }}</p>{% endif %}
+        <p class="prof-major">{{ f.major }}</p>
+        <ul class="tags small">{% for c in f.courses %}<li>{{ c }}</li>{% endfor %}</ul>
+        <p class="prof-contact">{{ f.office }}<br><a href="mailto:{{ f.email }}">{{ f.email }}</a></p>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="others">
+      <h3>함께 가르치는 교수님</h3>
+      <ul>
+        {% for o in site.data.faculty.others %}<li><strong>{{ o.name }}</strong> {{ o.note }}</li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="wrap">
+    <div class="contact-box" id="contact">
+      <div>
+        <h2>학과사무실</h2>
+        <p>궁금한 점은 학과사무실로 편하게 연락하세요.</p>
+      </div>
+      <dl>
+        <div><dt>전화</dt><dd><a href="tel:{{ info.office_tel }}">{{ info.office_tel }}</a></dd></div>
+        <div><dt>팩스</dt><dd>{{ info.office_fax }}</dd></div>
+        <div><dt>주소</dt><dd>{{ info.address }}</dd></div>
+        <div><dt>오시는 길</dt><dd>{% for d in info.directions %}{{ d }}<br>{% endfor %}</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>

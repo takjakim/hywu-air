@@ -1,0 +1,55 @@
+---
+layout: page
+title: 학과생활
+slug: campus
+permalink: /campus/
+description: "한양여대 항공과 학과생활. 봉사 동아리 한마음, 창업 동아리 하이바이, 실내악 동아리 아마빌레와 기업탐방, 선배 특강 같은 학과 행사를 소개합니다."
+lead: "수업이 끝나도 항공과는 바빠요. 봉사하고, 만들고, 연주하고, 선배를 만나요."
+---
+{% assign info = site.data.info %}
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>동아리</h2>
+    </div>
+    <div class="cards cards-3">
+      {% for c in site.data.clubs %}
+      <article class="card club">
+        <span class="chip">{{ c.tag }}</span>
+        <h3>{{ c.name }}</h3>
+        <p>{{ c.desc }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>이런 활동을 해 왔어요</h2>
+    </div>
+    <ul class="activity-list">
+      {% for a in site.data.activities %}<li>{{ a }}</li>{% endfor %}
+    </ul>
+    {% assign events = site.posts | where: "category_id", "event" %}
+    {% if events.size > 0 %}
+    <div class="post-grid" style="margin-top:2rem">
+      {% for post in events limit:4 %}{% include post-card.html post=post %}{% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-inner">
+    <div>
+      <h2>더 생생한 모습은 SNS에서</h2>
+      <p>행사 사진과 영상은 학과 인스타그램과 유튜브에서 볼 수 있어요.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-instagram-lg" href="{{ info.instagram }}" target="_blank" rel="noopener">{% include icon.html name='instagram' %}인스타그램 {{ info.instagram_id }}</a>
+      <a class="btn btn-outline" href="{{ info.youtube }}" target="_blank" rel="noopener">유튜브 채널</a>
+    </div>
+  </div>
+</section>

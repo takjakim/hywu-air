@@ -1,0 +1,61 @@
+# ─────────────────────────────────────────────
+# 한양여자대학교 항공과 학과 홍보 사이트 설정
+# 이 파일을 고친 뒤에는 1~2분 뒤 사이트에 반영됩니다.
+# ─────────────────────────────────────────────
+
+title: "한양여자대학교 항공과"
+short_title: "한양여자대학교 항공과"
+# 메인 화면 제목 뒤에 붙는 짧은 문구 (검색 결과 제목: 한양여자대학교 항공과 | 하늘 위 첫 출근을 준비하는 곳)
+tagline: "하늘 위 첫 출근을 준비하는 곳"
+description: "한양여대 항공과(한양여자대학교 항공과) 홍보 사이트. 객실승무원, 공항 지상직, 호스피탈리티 진로와 2027학년도 수시 입학 정보, 실습과 합격 소식을 소개합니다."
+lang: ko
+locale: ko_KR
+
+# 검색, SNS 공유용 정보 (jekyll-seo-tag 가 사용)
+logo: /assets/img/hywu-mark-512.png
+image: /assets/img/og-default.png
+social:
+  name: 한양여자대학교 항공과
+  links:
+    - https://www.instagram.com/hyairsvc/
+    - https://www.youtube.com/@hyairsvc
+    - https://www.hywoman.ac.kr/airlineservice/index.do
+
+# 사이트 소유 확인 코드. 구글 서치콘솔, 네이버 서치어드바이저에서 받은 값을 넣으세요.
+webmaster_verifications:
+  google: ""
+naver_site_verification: ""
+
+# GitHub Pages 주소에 맞춰 바꿔 주세요.
+#  - 저장소 이름이 hywu-air 이면: baseurl: "/hywu-air"
+#  - 저장소 이름이 <아이디>.github.io 이거나 개인 도메인을 연결했다면: baseurl: ""
+url: "https://takjakim.github.io"   # 실제 배포 주소로 바꿔 주세요 (검색엔진에 알려 주는 대표 주소)
+baseurl: "/hywu-air"
+
+# 소식 글 주소 형식: /news/2026/korean-air-cabin-crew/
+permalink: /news/:year/:title/
+
+timezone: Asia/Seoul
+markdown: kramdown
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+
+# 소식 글 기본값 (글마다 front matter 를 덜 써도 되게)
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - plane-test.html
+  - README.md
+  - 운영가이드.md
+  - Gemfile
+  - Gemfile.lock
+  - tools/
+  - vendor/

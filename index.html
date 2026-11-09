@@ -1,0 +1,197 @@
+---
+layout: default
+slug: home
+---
+{% assign info = site.data.info %}
+{% assign adm = site.data.admission %}
+<section class="hero">
+  <svg class="hero-swoosh" viewBox="0 0 1440 520" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 420C300 260 620 120 980 70c180-25 340-20 500 10v-120H-40z" fill="#fff" opacity=".45"/><path d="M620 520c180-150 420-260 860-300v300z" fill="#fff" opacity=".35"/></svg>
+  <div class="wrap hero-inner">
+    <div class="hero-copy">
+      <h1><span class="hero-kicker">한양여자대학교 항공과</span>하늘 위 첫 출근을 준비하는 곳</h1>
+    </div>
+
+    <div class="booking" data-tabs>
+      <div class="booking-tabs" role="tablist" aria-label="입학 정보">
+        <button role="tab" id="tab-schedule" aria-selected="true" aria-controls="panel-schedule">{% include icon.html name='calendar' %}<span>입학 일정</span></button>
+        <button role="tab" id="tab-method" aria-selected="false" aria-controls="panel-method" tabindex="-1">{% include icon.html name='clipboard' %}<span>전형 방법</span></button>
+        <button role="tab" id="tab-contact" aria-selected="false" aria-controls="panel-contact" tabindex="-1">{% include icon.html name='phone' %}<span>학과 문의</span></button>
+        <button role="tab" id="tab-map" aria-selected="false" aria-controls="panel-map" tabindex="-1">{% include icon.html name='pin' %}<span>오시는 길</span></button>
+      </div>
+
+      <div class="booking-panel" role="tabpanel" id="panel-schedule" aria-labelledby="tab-schedule">
+        <div class="booking-top">
+          <div class="segmented" role="group" aria-label="모집 시기">
+            {% for r in adm.rounds %}<button type="button" data-round="{{ r.id }}" class="{% if forloop.first %}on{% endif %}">{{ r.name }}</button>{% endfor %}
+          </div>
+          <p class="booking-note">{{ adm.year }}학년도 수시 모집요강 기준</p>
+        </div>
+        {% for r in adm.rounds %}
+        <div class="round{% if forloop.first %} on{% endif %}" data-round-panel="{{ r.id }}" data-start="{{ r.start }}" data-end="{{ r.end }}">
+          <div class="route">
+            <div class="route-code"><strong>{{ r.name }}</strong><span>{{ r.quota }}</span></div>
+            <span class="route-plane">{% include icon.html name='plane' %}</span>
+            <div class="route-code"><strong>HYWU</strong><span>항공과 입학</span></div>
+          </div>
+          <dl class="route-meta">
+            <div><dt>원서접수</dt><dd>{% include icon.html name='calendar' %}{{ r.apply }}</dd><dd class="status" data-status></dd></div>
+            <div><dt>면접고사</dt><dd>{% include icon.html name='people' %}{{ r.interview }}</dd></div>
+            <div><dt>합격 발표</dt><dd>{% include icon.html name='badge' %}{{ r.result }}</dd></div>
+          </dl>
+          <a class="btn btn-primary booking-go" href="{{ '/admission/' | relative_url }}">모집요강 보기</a>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="booking-panel" role="tabpanel" id="panel-method" aria-labelledby="tab-method" hidden>
+        <div class="method">
+          <div class="method-ratio">
+            <div><span>학생부</span><strong>40<small>%</small></strong></div>
+            <span class="plus">+</span>
+            <div><span>면접</span><strong>60<small>%</small></strong></div>
+          </div>
+          <div class="method-list">
+            <p class="booking-label">면접에서 보는 것</p>
+            <ul>
+              <li>전공적성 및 의사표현력</li>
+              <li>학업성취 의욕과 직업관</li>
+              <li>예절 및 태도</li>
+              <li>발전 가능성</li>
+            </ul>
+            <p class="method-news">2027학년도부터 면접 영어 지문 읽기는 하지 않아요.</p>
+          </div>
+          <a class="btn btn-primary booking-go" href="{{ '/admission/' | relative_url }}">전형 자세히 보기</a>
+        </div>
+      </div>
+
+      <div class="booking-panel" role="tabpanel" id="panel-contact" aria-labelledby="tab-contact" hidden>
+        <dl class="route-meta wide">
+          <div><dt>학과사무실</dt><dd>{% include icon.html name='phone' %}<a href="tel:{{ info.office_tel }}">{{ info.office_tel }}</a></dd></div>
+          <div><dt>입학팀</dt><dd>{% include icon.html name='phone' %}<a href="tel:{{ info.admission_tel }}">{{ info.admission_tel }}</a></dd></div>
+          <div><dt>인스타그램 DM</dt><dd>{% include icon.html name='instagram' %}<a href="{{ info.instagram }}" target="_blank" rel="noopener">{{ info.instagram_id }}</a></dd></div>
+        </dl>
+        <a class="btn btn-primary booking-go" href="tel:{{ info.office_tel }}">학과에 전화하기</a>
+      </div>
+
+      <div class="booking-panel" role="tabpanel" id="panel-map" aria-labelledby="tab-map" hidden>
+        <dl class="route-meta wide">
+          <div><dt>주소</dt><dd>{% include icon.html name='pin' %}{{ info.address }}</dd></div>
+          {% for d in info.directions %}<div><dt>{% if forloop.first %}추천 경로{% else %}다른 경로{% endif %}</dt><dd>{{ d }}</dd></div>{% endfor %}
+        </dl>
+        <a class="btn btn-primary booking-go" href="{{ '/about/' | relative_url }}#contact">학과 위치 보기</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tight">
+  <div class="wrap">
+    <a class="promo" href="{{ '/admission/' | relative_url }}">
+      <div class="promo-copy">
+        <p class="promo-title">{{ adm.year }}학년도 수시2차 원서접수, 11월 11일부터 시작해요</p>
+        <span class="btn btn-outline">입학안내 자세히 보기</span>
+      </div>
+      <div class="promo-art">{% include illust.html name='tail' %}</div>
+    </a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head row">
+      <h2>졸업하면 이런 일을 해요</h2>
+      <a class="link-more" href="{{ '/careers/' | relative_url }}">진로와 합격 보기</a>
+    </div>
+    <div class="cards cards-3">
+      {% for t in site.data.tracks %}{% include track-card.html track=t %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap news-split">
+    <div>
+      <div class="section-head row">
+        <h2>학과 소식</h2>
+        <a class="link-more" href="{{ '/news/' | relative_url }}">목록보기</a>
+      </div>
+      <ul class="notice-list">
+        {% for post in site.posts limit:5 %}
+        <li><a href="{{ post.url | relative_url }}"><span class="notice-cat">{{ post.category | default: '소식' }}</span><span class="notice-title">{{ post.title }}</span><time>{{ post.date | date: "%Y년 %m월 %d일" }}</time></a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    <a class="insta-card" href="{{ info.instagram }}" target="_blank" rel="noopener">
+      <div class="insta-copy">
+        <span class="insta-badge">{% include icon.html name='instagram' %}</span>
+        <p class="insta-title">실습 현장은<br>인스타그램에서</p>
+        <p class="insta-id">{{ info.instagram_id }}</p>
+      </div>
+      <div class="insta-art">{% include illust.html name='phone' %}</div>
+    </a>
+  </div>
+</section>
+
+<section class="section section-tight">
+  <div class="wrap">
+    <div class="section-head"><h2>숫자로 보는 항공과</h2></div>
+    <div class="stats">
+      {% for s in site.data.stats %}
+      <div class="stat"><strong>{{ s.value }}</strong><span>{{ s.label }}</span></div>
+      {% endfor %}
+    </div>
+    <p class="note">학교 공식 학과 소개 페이지 기준</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head row">
+      <h2>2년 동안 이렇게 배워요</h2>
+      <a class="link-more" href="{{ '/curriculum/' | relative_url }}">교육과정 자세히 보기</a>
+    </div>
+    <ol class="journey">
+      {% for j in site.data.journey %}
+      <li class="journey-step">
+        <span class="journey-num">{{ j.step }}</span>
+        <h3>{{ j.title }}</h3>
+        <p>{{ j.desc }}</p>
+        <ul class="tags">{% for t in j.tags %}<li>{{ t }}</li>{% endfor %}</ul>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="section section-band">
+  <div class="wrap">
+    <div class="section-head"><h2>항공과 더 알아보기</h2></div>
+    <ul class="quick-tiles">
+      <li><a href="{{ '/about/' | relative_url }}"><span>학과소개</span>{% include icon.html name='school' %}</a></li>
+      <li><a href="{{ '/curriculum/' | relative_url }}"><span>교육과정</span>{% include icon.html name='book' %}</a></li>
+      <li><a href="{{ '/curriculum/' | relative_url }}#facilities"><span>실습실</span>{% include icon.html name='seat' %}</a></li>
+      <li><a href="{{ '/curriculum/' | relative_url }}#licenses"><span>자격증</span>{% include icon.html name='badge' %}</a></li>
+      <li><a href="{{ '/campus/' | relative_url }}"><span>동아리</span>{% include icon.html name='people' %}</a></li>
+      <li><a href="{{ '/careers/' | relative_url }}"><span>합격 소식</span>{% include icon.html name='plane' %}</a></li>
+      <li><a href="{{ '/admission/' | relative_url }}"><span>입학안내</span>{% include icon.html name='ticket' %}</a></li>
+      <li><a href="{{ '/admission/' | relative_url }}#faq"><span>자주 묻는 질문</span>{% include icon.html name='help' %}</a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap narrow">
+    <div class="section-head row">
+      <h2>자주 묻는 질문</h2>
+      <a class="link-more" href="{{ '/admission/' | relative_url }}#faq">전체 보기</a>
+    </div>
+    <div class="faq">
+      {% for f in site.data.faq limit:4 %}
+      <details>
+        <summary>{{ f.q }}{% include icon.html name='chevron-down' %}</summary>
+        <p>{{ f.a }}</p>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>

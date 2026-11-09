@@ -1,0 +1,102 @@
+---
+layout: page
+title: 입학안내
+slug: admission
+permalink: /admission/
+description: "한양여대 항공과 2027학년도 수시 입학안내. 입학정원 100명, 학생부 40%와 면접 60% 전형, 수시1차와 수시2차 원서접수, 면접, 합격자 발표 일정과 면접 준비물을 정리했습니다."
+lead: "2027학년도 수시 모집요강을 바탕으로 정리했어요. 최종 기준은 반드시 입학홈의 모집요강을 확인하세요."
+---
+{% assign info = site.data.info %}
+<section class="section">
+  <div class="wrap">
+    <div class="cards cards-3 admission-cards">
+      <article class="card adm">
+        <p class="adm-label">입학정원</p>
+        <strong>100명</strong>
+        <p>2년제, 주간</p>
+      </article>
+      <article class="card adm">
+        <p class="adm-label">수시 일반전형</p>
+        <strong>학생부 40% + 면접 60%</strong>
+        <p>수시1차 80명, 수시2차 19명</p>
+      </article>
+      <article class="card adm">
+        <p class="adm-label">2027 달라진 점</p>
+        <strong>영어 지문 읽기 폐지</strong>
+        <p>면접에서 영어 지문 읽기를 하지 않아요</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>2027 수시 일정</h2>
+    </div>
+    <div class="table-wrap">
+      <table class="schedule">
+        <thead><tr><th>구분</th><th>수시1차</th><th>수시2차</th></tr></thead>
+        <tbody>
+          <tr><th>원서접수</th><td>2026.9.7(월) ~ 9.30(수) 21:00</td><td class="now">2026.11.11(수) ~ 11.25(수) 21:00</td></tr>
+          <tr><th>면접 일시 선택</th><td>10.12(월) 17:00 ~ 21:00</td><td>11.30(월) 17:00 ~ 21:00</td></tr>
+          <tr><th>면접고사</th><td>10.17(토) ~ 10.18(일)</td><td>12.12(토) ~ 12.13(일)</td></tr>
+          <tr><th>합격자 발표</th><td>11.3(화) 14:00</td><td>12.19(토) 14:00</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">원서접수는 유웨이, 진학사에서 할 수 있어요. 면접 일시는 원서접수가 끝난 뒤 학교 홈페이지에서 직접 고르고, 고르지 않으면 자동으로 배정돼요. 일정은 입시 진행에 따라 바뀔 수 있어요.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <h2>면접에서 보는 것</h2>
+        <ul class="check-list">
+          <li>전공적성 및 의사표현력</li>
+          <li>학업성취 의욕과 직업관</li>
+          <li>예절 및 태도</li>
+          <li>발전 가능성</li>
+        </ul>
+      </div>
+      <div>
+        <h2>면접 날 챙길 것</h2>
+        <ul class="check-list">
+          <li>모바일 수험표 (알림톡으로 받은 QR)</li>
+          <li>사진 붙은 신분증 (주민등록증, 사진과 생년월일 있는 학생증, 여권, 청소년증 등)</li>
+          <li>고사장 배정표는 학교 홈페이지에서 미리 확인 (예비 소집 없음)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft" id="faq">
+  <div class="wrap narrow">
+    <div class="section-head">
+      <h2>자주 묻는 질문</h2>
+    </div>
+    <div class="faq">
+      {% for f in site.data.faq %}
+      <details>
+        <summary>{{ f.q }}{% include icon.html name='chevron-down' %}</summary>
+        <p>{{ f.a }}</p>
+      </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap cta-inner">
+    <div>
+      <h2>모집요강 원문과 원서접수</h2>
+      <p>입학 문의 {{ info.admission_tel }} (입학팀) &nbsp;|&nbsp; 학과 문의 {{ info.office_tel }}</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="{{ info.admission_home }}" target="_blank" rel="noopener">입학홈 바로가기{% include icon.html name='external' %}</a>
+    </div>
+  </div>
+</section>

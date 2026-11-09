@@ -1,0 +1,61 @@
+---
+layout: page
+title: 진로와 합격
+slug: careers
+permalink: /careers/
+description: "한양여대 항공과 졸업 후 진로와 합격 소식. 국내외 항공사 객실승무원, 항공사 지상직, 공항 라운지와 호텔 분야 진출, 취업 지원 프로그램을 확인하세요."
+lead: "국내외 항공사 객실승무원, 항공사 지상직, 공항 VIP 라운지까지. 선배들이 먼저 걸어간 길이에요."
+---
+{% assign info = site.data.info %}
+<section class="section">
+  <div class="wrap">
+    <div class="cards cards-3">
+      {% for t in site.data.tracks %}
+      {% include track-card.html track=t %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>합격 소식</h2>
+      <p>선배들의 합격 소식이 올라오는 곳이에요.</p>
+    </div>
+    {% assign passes = site.posts | where: "category_id", "pass" %}
+    <div class="post-grid">
+      {% for post in passes limit:8 %}{% include post-card.html post=post %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>취업까지 함께 가요</h2>
+    </div>
+    <ul class="check-list two-col">
+      <li>항공사 체험 프로그램과 기업 탐방</li>
+      <li>항공사 출신 선배 특강, 채용설명회</li>
+      <li>항공면접 실무, 모의비행 캡스톤디자인</li>
+      <li>NCS 항공객실서비스 기준 교육과정</li>
+      <li>수업과 연계된 자격증 준비</li>
+      <li>학생경력개발시스템, 진로취업 상담</li>
+    </ul>
+    <p class="more-link"><a class="link-arrow" href="{{ info.official_jobs }}" target="_blank" rel="noopener">학과 취업정보 게시판{% include icon.html name='external' %}</a></p>
+  </div>
+</section>
+
+{% if site.data.alumni and site.data.alumni.size > 0 %}
+<section class="section section-sky">
+  <div class="wrap">
+    <div class="section-head"><h2>선배의 한마디</h2></div>
+    <div class="cards cards-3">
+      {% for a in site.data.alumni %}
+      <figure class="card quote"><blockquote>{{ a.quote }}</blockquote><figcaption><strong>{{ a.name }}</strong> {{ a.info }}</figcaption></figure>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
