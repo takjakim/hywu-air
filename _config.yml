@@ -22,8 +22,8 @@ social:
     - https://www.hywoman.ac.kr/airlineservice/index.do
 
 # 사이트 소유 확인 코드. 구글 서치콘솔, 네이버 서치어드바이저에서 받은 값을 넣으세요.
-webmaster_verifications:
-  google: ""
+# webmaster_verifications:
+#   google: "여기에 구글 확인 코드"
 naver_site_verification: ""
 
 # GitHub Pages 주소에 맞춰 바꿔 주세요.
@@ -47,12 +47,18 @@ plugins:
 defaults:
   - scope:
       path: ""
+    values:
+      image: /assets/img/og-default.png   # 카톡, SNS 공유 이미지 기본값
+  - scope:
+      path: ""
       type: posts
     values:
       layout: post
 
 exclude:
   - plane-test.html
+  - assets/img/faculty/README.md
+  - assets/img/posts/README.md
   - README.md
   - 운영가이드.md
   - Gemfile
