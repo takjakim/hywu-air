@@ -1,0 +1,24 @@
+---
+layout: page
+title: 학과 소식
+slug: news
+permalink: /news/
+description: "한양여대 항공과 학과 소식. 항공사 객실승무원 합격, 공모전 수상, 학과 행사, 입시 소식을 모아 봅니다."
+lead: "합격, 수상, 학과 행사, 입시 소식을 모아 둬요."
+---
+<section class="section">
+  <div class="wrap">
+    <div class="filter" role="tablist" aria-label="소식 분류">
+      <button class="on" data-filter="all">전체</button>
+      <button data-filter="pass">합격</button>
+      <button data-filter="award">수상</button>
+      <button data-filter="event">학과행사</button>
+      <button data-filter="admission">입시</button>
+    </div>
+    <div class="post-grid" id="news-list">
+      {% for post in site.posts %}
+      <div class="post-item" data-cat="{{ post.category_id | default: 'etc' }}">{% include post-card.html post=post %}</div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
