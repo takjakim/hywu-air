@@ -1,0 +1,48 @@
+{% assign info = site.data.info %}
+<footer class="site-footer">
+  <div class="wrap footer-cols">
+    <div>
+      <p class="footer-title">학과</p>
+      <ul class="footer-links">
+        <li><a href="{{ '/about/' | relative_url }}">학과소개</a></li>
+        <li><a href="{{ '/curriculum/' | relative_url }}">배우는 것</a></li>
+        <li><a href="{{ '/careers/' | relative_url }}">진로와 합격</a></li>
+        <li><a href="{{ '/campus/' | relative_url }}">학과생활</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-title">입학과 소식</p>
+      <ul class="footer-links">
+        <li><a href="{{ '/admission/' | relative_url }}">입학안내</a></li>
+        <li><a href="{{ '/news/' | relative_url }}">학과 소식</a></li>
+        <li><a href="{{ '/admission/' | relative_url }}#faq">자주 묻는 질문</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-title">바로가기</p>
+      <ul class="footer-links">
+        <li><a href="{{ info.official_site }}" target="_blank" rel="noopener">학과 공식 홈페이지</a></li>
+        <li><a href="{{ info.official_notice }}" target="_blank" rel="noopener">재학생 공지사항</a></li>
+        <li><a href="{{ info.admission_home }}" target="_blank" rel="noopener">입학홈</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-title">학과사무실</p>
+      <ul class="footer-links">
+        <li><a href="tel:{{ info.office_tel }}">전화 {{ info.office_tel }}</a></li>
+        <li>팩스 {{ info.office_fax }}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <div class="footer-sns">
+      <a class="sns sns-instagram" href="{{ info.instagram }}" target="_blank" rel="noopener" aria-label="인스타그램 {{ info.instagram_id }}">{% include icon.html name='instagram' %}</a>
+      <a class="sns sns-youtube" href="{{ info.youtube }}" target="_blank" rel="noopener" aria-label="유튜브 채널">{% include icon.html name='youtube' %}</a>
+    </div>
+    <img class="footer-ci" src="{{ '/assets/img/hywu-logo.svg' | relative_url }}" alt="한양여자대학교" width="150" height="30">
+  </div>
+  <div class="wrap footer-info">
+    <p><strong>{{ info.name }}</strong> <span class="sep"></span> {{ info.address }} <span class="sep"></span> 학과사무실 {{ info.office_tel }}</p>
+    <p>이 사이트는 항공과 홍보용 소개 페이지입니다. 학사 일정, 등록금, 장학 등 공식 공지는 학교 홈페이지를 기준으로 합니다.</p>
+  </div>
+</footer>

@@ -1,0 +1,31 @@
+{% assign info = site.data.info %}
+<header class="site-header" id="top">
+  <div class="wrap util-bar">
+    <ul class="util-links">
+      <li><a href="{{ info.admission_home }}" target="_blank" rel="noopener">{% include icon.html name='school' %}입학홈</a></li>
+      <li><a href="{{ info.official_site }}" target="_blank" rel="noopener">{% include icon.html name='home' %}학과 공식 홈페이지</a></li>
+      <li><a href="tel:{{ info.office_tel }}">{% include icon.html name='phone' %}{{ info.office_tel }}</a></li>
+    </ul>
+  </div>
+  <div class="wrap header-inner">
+    <a class="logo" href="{{ '/' | relative_url }}" aria-label="한양여자대학교 항공과 홈">
+      <img class="logo-ci" src="{{ '/assets/img/hywu-logo.svg' | relative_url }}" alt="한양여자대학교" width="190" height="38">
+      <span class="logo-dept">항공과</span>
+    </a>
+    <nav id="site-nav" class="site-nav" aria-label="주 메뉴">
+      <ul>
+        {% for item in site.data.nav %}
+        {% assign active = false %}
+        {% if page.url contains item.url %}{% assign active = true %}{% endif %}
+        <li><a href="{{ item.url | relative_url }}" {% if active %}aria-current="page"{% endif %}>{{ item.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="btn-instagram" href="{{ info.instagram }}" target="_blank" rel="noopener" aria-label="인스타그램 {{ info.instagram_id }} 새 창으로 열기">
+        <span class="ig-glyph">{% include icon.html name='instagram' %}</span><span class="ig-label">{{ info.instagram_id }}</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span><em>메뉴</em></button>
+    </div>
+  </div>
+</header>

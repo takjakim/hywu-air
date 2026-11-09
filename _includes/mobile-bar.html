@@ -1,0 +1,6 @@
+{% assign info = site.data.info %}
+<nav class="mobile-bar" aria-label="빠른 메뉴">
+  <a href="{{ '/admission/' | relative_url }}">{% include icon.html name='calendar' %}입시정보</a>
+  <a class="mb-instagram" href="{{ info.instagram }}" target="_blank" rel="noopener"><span class="ig-glyph">{% include icon.html name='instagram' %}</span>인스타그램</a>
+  <a href="tel:{{ info.office_tel }}">{% include icon.html name='phone' %}학과 전화</a>
+</nav>

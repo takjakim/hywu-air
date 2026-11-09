@@ -1,0 +1,36 @@
+{% assign info = site.data.info %}{% assign home_url = '/' | absolute_url %}
+{% if page.url == '/' %}<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollegeOrUniversity",
+  "name": "{{ info.name }}",
+  "alternateName": ["한양여대 항공과", "Department of Airline Services, Hanyang Women's University"],
+  "url": "{{ home_url }}",
+  "logo": "{{ site.logo | absolute_url }}",
+  "image": "{{ site.image | absolute_url }}",
+  "description": "{{ site.description }}",
+  "telephone": "+82-2-2290-2480",
+  "faxNumber": "+82-2-2290-2487",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "살곶이길 200",
+    "addressLocality": "성동구",
+    "addressRegion": "서울특별시",
+    "postalCode": "04763",
+    "addressCountry": "KR"
+  },
+  "parentOrganization": { "@type": "CollegeOrUniversity", "name": "한양여자대학교", "url": "https://www.hywoman.ac.kr/" },
+  "sameAs": ["{{ info.instagram }}", "{{ info.youtube }}", "{{ info.official_site }}"]
+}
+</script>{% elsif page.title %}<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "홈", "item": "{{ home_url }}" }{% if page.collection == 'posts' or page.layout == 'post' %},
+    { "@type": "ListItem", "position": 2, "name": "학과 소식", "item": "{{ '/news/' | absolute_url }}" },
+    { "@type": "ListItem", "position": 3, "name": "{{ page.title | escape }}", "item": "{{ page.url | absolute_url }}" }{% else %},
+    { "@type": "ListItem", "position": 2, "name": "{{ page.title | escape }}", "item": "{{ page.url | absolute_url }}" }{% endif %}
+  ]
+}
+</script>{% endif %}
