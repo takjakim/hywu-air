@@ -1,0 +1,22 @@
+# 학과 기본 정보. 연락처나 SNS 주소가 바뀌면 여기만 고치면 됩니다.
+name: 한양여자대학교 항공과
+brand: 한양여자대학교 항공과
+brand_short: 항공과
+office_tel: "02-2290-2480"
+office_fax: "02-2290-2487"
+admission_tel: "02-2290-2111"
+address: "(04763) 서울특별시 성동구 살곶이길 200 (사근동) 한양여자대학교"
+directions:
+  - "지하철 2호선 용답역 2번 출구, 도보 약 7분"
+  - "지하철 2호선 한양대역 3번 출구, 셔틀버스 또는 도보 약 13분"
+instagram: "https://www.instagram.com/hyairsvc/"
+instagram_id: "@hyairsvc"
+youtube: "https://www.youtube.com/@hyairsvc"
+official_site: "https://www.hywoman.ac.kr/airlineservice/index.do"
+official_board: "https://www.hywoman.ac.kr/airlineservice/cms/FrCon/index.do?MENU_ID=130"
+official_notice: "https://www.hywoman.ac.kr/airlineservice/cms/FrCon/index.do?MENU_ID=90"
+official_jobs: "https://www.hywoman.ac.kr/airlineservice/cms/FrCon/index.do?MENU_ID=110"
+official_roadmap: "https://www.hywoman.ac.kr/airlineservice/cms/FrCon/index.do?MENU_ID=60"
+official_ai_module: "https://www.hywoman.ac.kr/airlineservice/cms/FrCon/index.do?MENU_ID=210"
+official_curriculum: "https://www.hywoman.ac.kr/airlineservice/cms/FrCon/index.do?MENU_ID=30"
+admission_home: "https://www.hywoman.ac.kr/hyw_admission/index.do"

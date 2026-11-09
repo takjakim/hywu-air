@@ -1,0 +1,14 @@
+# 메인 화면 숫자 카드. 출처는 학교 공식 '학과 자랑' 페이지(hywoman.ac.kr/dept/airlineservice.html).
+# 새 수치로 바꿀 때는 기준 연도를 note 에 함께 적어 주세요.
+- value: "1위"
+  label: "학생 강의만족도"
+  note: "학교 공식 학과 소개 기준"
+- value: "105%"
+  label: "재학생 충원율"
+  note: "학교 공식 학과 소개 기준"
+- value: "100%"
+  label: "주문식 교육과정 운영"
+  note: "학교 공식 학과 소개 기준"
+- value: "1st"
+  label: "재학생 만족도"
+  note: "학교 공식 학과 소개 기준"

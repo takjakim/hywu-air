@@ -1,0 +1,6 @@
+- { title: 학과소개, url: /about/ }
+- { title: 배우는 것, url: /curriculum/ }
+- { title: 진로와 합격, url: /careers/ }
+- { title: 학과생활, url: /campus/ }
+- { title: 소식, url: /news/ }
+- { title: 입학안내, url: /admission/ }
