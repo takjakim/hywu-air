@@ -29,7 +29,7 @@ naver_site_verification: ""
 # GitHub Pages 주소에 맞춰 바꿔 주세요.
 #  - 저장소 이름이 hywu-air 이면: baseurl: "/hywu-air"
 #  - 저장소 이름이 <아이디>.github.io 이거나 개인 도메인을 연결했다면: baseurl: ""
-url: "https://takjakim.github.io"   # 실제 배포 주소로 바꿔 주세요 (검색엔진에 알려 주는 대표 주소)
+url: "https://takjakim.kr"   # 실제 배포 주소 (takjakim.github.io 가 takjakim.kr 로 연결되어 있음)
 baseurl: "/hywu-air"
 
 # 소식 글 주소 형식: /news/2026/korean-air-cabin-crew/

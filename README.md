@@ -91,7 +91,7 @@ about.html curriculum.html careers.html campus.html admission.html news/  각 �
 
 ## 검색 노출(SEO) 체크리스트
 
-- `_config.yml` 의 `url` 을 실제 주소로 바꾸기 (지금은 `https://takjakim.github.io` 로 가정)
+- `_config.yml` 의 `url` 을 실제 주소로 바꾸기 (지금은 `https://takjakim.kr` (사이트 주소 https://takjakim.kr/hywu-air/))
 - 배포 후 구글 서치콘솔, 네이버 서치어드바이저에 사이트 등록, 확인 코드를 `_config.yml` 에 넣기, `sitemap.xml` 제출 (네이버는 `feed.xml` 도 제출)
 - 예시 글(`이 글은 예시입니다`)은 `noindex: true` 로 검색에서 빠져 있습니다. 실제 내용으로 바꾸면 그 두 줄을 지우세요.
 - 새 페이지를 만들 때는 front matter 에 `description:` 한 줄(80~110자, '한양여대 항공과' 포함)을 꼭 넣으세요.
