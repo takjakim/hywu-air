@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-head wrap narrow">
+    <a class="back" href="{{ '/news/' | relative_url }}">{% include icon.html name='arrow-left' %}소식 전체 보기</a>
+    {% if page.category %}<span class="chip">{{ page.category }}</span>{% endif %}
+    <h1>{{ page.title }}</h1>
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y.%m.%d" }}</time>
+  </header>
+  {% if page.image %}
+  <figure class="post-cover wrap narrow"><img src="{{ page.image | relative_url }}" alt="{{ page.title }}"></figure>
+  {% endif %}
+  <div class="post-body wrap narrow">
+    {{ content }}
+    {% if page.source %}
+    <p class="source"><a class="link-arrow" href="{{ page.source }}" target="_blank" rel="noopener">학과 공식 게시판에서 원문 보기{% include icon.html name='external' %}</a></p>
+    {% endif %}
+  </div>
+</article>
